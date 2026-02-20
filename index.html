@@ -1398,160 +1398,289 @@
           <h2 class="text-3xl md:text-5xl font-bold font-display text-white mb-4">Why build a <span
               class="text-cinema">sovereign pipeline?</span></h2>
           <p class="text-slate-400 text-base md:text-lg">Don't rent your own data.</p>
-          <!-- Mobile Swipe Hint -->
-          <div
-            class="flex items-center justify-center gap-2 mt-6 text-slate-500 text-[10px] md:hidden font-mono uppercase tracking-[0.2em]">
-            <span class="material-symbols-rounded text-sm">swipe</span>
-            Swipe to explore
-          </div>
-        </div>
+          <div class="relative max-w-6xl mx-auto reveal mt-4 md:mt-0">
 
-        <div class="relative max-w-6xl mx-auto reveal">
-          <!-- Main Glass Panel -->
-          <div class="glass-panel rounded-3xl p-1.5 md:p-2 overflow-hidden ring-1 ring-white/10">
-            <div class="bg-[#0B1221]/80 backdrop-blur-xl rounded-[20px] overflow-x-auto touch-pan-x">
-
-              <!-- Grid Header -->
-              <div class="grid grid-cols-4 min-w-[800px] md:min-w-[900px] border-b border-white/5">
-                <div
-                  class="p-6 md:p-8 text-slate-500 font-mono text-[10px] md:text-sm uppercase tracking-wider font-bold">
-                  Feature</div>
-                <div
-                  class="p-6 md:p-8 text-slate-500 font-mono text-[10px] md:text-sm uppercase tracking-wider font-bold">
-                  Typical SaaS</div>
-                <div
-                  class="p-6 md:p-8 text-slate-500 font-mono text-[10px] md:text-sm uppercase tracking-wider font-bold">
-                  Agencies</div>
-                <!-- Highlighted Header -->
-                <div
-                  class="p-6 md:p-8 bg-gradient-to-b from-purple-900/20 via-purple-900/5 to-transparent border-x border-t border-purple-500/30 rounded-t-xl relative -mt-1 -mr-px lg:-mt-0 lg:-mr-0 shadow-[0_-10px_40px_rgba(168,85,247,0.15)]">
-                  <div
-                    class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600">
-                  </div>
-                  <div class="flex items-center gap-3">
-                    <span class="text-white font-bold tracking-wide text-base md:text-lg text-shadow-glow">Local
-                      Hunter</span>
-                    <span
-                      class="px-2 py-0.5 rounded text-[10px] font-bold bg-gradient-to-r from-orange-500 to-purple-600 text-white shadow-lg shadow-orange-500/40 tracking-wider">YOU</span>
+            <!-- Mobile Comparison Cards (Hidden on Desktop) -->
+            <div class="md:hidden space-y-4 relative z-10">
+              <!-- Card 1 -->
+              <div class="glass-panel p-1 rounded-2xl relative overflow-hidden">
+                <div class="bg-[#0B1221]/90 rounded-xl p-5">
+                  <h3 class="text-white font-bold text-lg mb-4 border-b border-white/10 pb-3">Data Source</h3>
+                  <div class="space-y-3">
+                    <div class="flex justify-between items-center text-sm">
+                      <span class="text-slate-500 font-mono tracking-wider text-[10px]">TYPICAL SAAS</span>
+                      <div class="flex items-center gap-2 text-slate-400">
+                        <div class="w-1.5 h-1.5 rounded-full bg-red-500/50"></div>
+                        Stale Database
+                      </div>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                      <span class="text-slate-500 font-mono tracking-wider text-[10px]">AGENCIES</span>
+                      <div class="flex items-center gap-2 text-slate-400">
+                        <div class="w-1.5 h-1.5 rounded-full bg-yellow-500/50"></div>
+                        Manual Scraping
+                      </div>
+                    </div>
+                    <div
+                      class="flex justify-between items-center text-sm bg-purple-900/20 border border-purple-500/20 p-3 rounded-lg mt-3 relative overflow-hidden">
+                      <div class="absolute inset-0 bg-gradient-to-r from-orange-400/10 to-purple-600/10"></div>
+                      <span class="text-white font-bold font-mono tracking-wider text-[11px] z-10">AtlasAI</span>
+                      <div class="flex items-center gap-2 text-white font-bold z-10">
+                        <span class="material-symbols-rounded text-orange-400 text-sm">check</span>
+                        Live Web
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Row 1: Data Source -->
-              <div
-                class="grid grid-cols-4 min-w-[900px] border-b border-white/5 group hover:bg-white/[0.02] transition-colors">
-                <div class="p-8 flex items-center">
-                  <span class="text-slate-200 font-bold text-lg">Data Source</span>
-                </div>
-                <div class="p-8 flex items-center gap-4 text-slate-400 text-lg relative">
-                  <div class="w-2 h-2 rounded-full bg-red-500/50 shrink-0 shadow-[0_0_10px_rgba(239,68,68,0.2)]"></div>
-                  Stale Database
-                  <svg
-                    class="w-16 h-px absolute bottom-0 left-0 bg-gradient-to-r from-transparent via-red-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
-                    preserveAspectRatio="none"></svg>
-                </div>
-                <div class="p-8 flex items-center gap-4 text-slate-400 text-lg relative">
-                  <div class="w-2 h-2 rounded-full bg-yellow-500/50 shrink-0 shadow-[0_0_10px_rgba(234,179,8,0.2)]">
-                  </div>
-                  Manual Scraping
-                </div>
-                <!-- Highlighted Cell -->
-                <div
-                  class="p-8 bg-purple-900/5 border-x border-purple-500/20 flex items-center gap-4 text-white font-bold text-lg relative group-hover:bg-purple-900/10 transition-colors backdrop-blur-sm">
-                  <div
-                    class="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-400 shrink-0 border border-orange-500/20 shadow-[0_0_15px_rgba(249,115,22,0.15)]">
-                    <span class="material-symbols-rounded text-base">check</span>
-                  </div>
-                  Live Web & Social
-                  <div
-                    class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+              <!-- Card 2 -->
+              <div class="glass-panel p-1 rounded-2xl relative overflow-hidden">
+                <div class="bg-[#0B1221]/90 rounded-xl p-5">
+                  <h3 class="text-white font-bold text-lg mb-4 border-b border-white/10 pb-3">Personalization</h3>
+                  <div class="space-y-3">
+                    <div class="flex justify-between items-center text-sm">
+                      <span class="text-slate-500 font-mono tracking-wider text-[10px]">TYPICAL SAAS</span>
+                      <div class="flex items-center gap-2 text-slate-400">
+                        <div class="w-1.5 h-1.5 rounded-full bg-red-500/50"></div>
+                        Basic Templates
+                      </div>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                      <span class="text-slate-500 font-mono tracking-wider text-[10px]">AGENCIES</span>
+                      <div class="flex items-center gap-2 text-slate-400">
+                        <div class="w-1.5 h-1.5 rounded-full bg-green-500/50"></div>
+                        Expensive
+                      </div>
+                    </div>
+                    <div
+                      class="flex justify-between items-center text-sm bg-purple-900/20 border border-purple-500/20 p-3 rounded-lg mt-3 relative overflow-hidden">
+                      <div class="absolute inset-0 bg-gradient-to-r from-orange-400/10 to-purple-600/10"></div>
+                      <span class="text-white font-bold font-mono tracking-wider text-[11px] z-10">AtlasAI</span>
+                      <div class="flex items-center gap-2 text-white font-bold z-10">
+                        <span class="material-symbols-rounded text-orange-400 text-sm">check</span>
+                        AI Research
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Row 2: Personalization -->
-              <div
-                class="grid grid-cols-4 min-w-[900px] border-b border-white/5 group hover:bg-white/[0.02] transition-colors">
-                <div class="p-8 flex items-center">
-                  <span class="text-slate-200 font-bold text-lg">Personalization</span>
-                </div>
-                <div class="p-8 flex items-center gap-4 text-slate-400 text-lg">
-                  <div class="w-2 h-2 rounded-full bg-red-500/50 shrink-0 shadow-[0_0_10px_rgba(239,68,68,0.2)]"></div>
-                  Basic Templates
-                </div>
-                <div class="p-8 flex items-center gap-4 text-slate-400 text-lg">
-                  <div class="w-2 h-2 rounded-full bg-green-500/50 shrink-0 shadow-[0_0_10px_rgba(34,197,94,0.2)]">
+              <!-- Card 3 -->
+              <div class="glass-panel p-1 rounded-2xl relative overflow-hidden">
+                <div class="bg-[#0B1221]/90 rounded-xl p-5">
+                  <h3 class="text-white font-bold text-lg mb-4 border-b border-white/10 pb-3">Cost Model</h3>
+                  <div class="space-y-3">
+                    <div class="flex justify-between items-center text-sm">
+                      <span class="text-slate-500 font-mono tracking-wider text-[10px]">TYPICAL SAAS</span>
+                      <div class="flex items-center gap-2 text-slate-400">
+                        <div class="w-1.5 h-1.5 rounded-full bg-red-500/50"></div>
+                        Per Credit ($$$)
+                      </div>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                      <span class="text-slate-500 font-mono tracking-wider text-[10px]">AGENCIES</span>
+                      <div class="flex items-center gap-2 text-slate-400">
+                        <div class="w-1.5 h-1.5 rounded-full bg-red-500/50"></div>
+                        Retainer ($$$$)
+                      </div>
+                    </div>
+                    <div
+                      class="flex justify-between items-center text-sm bg-purple-900/20 border border-purple-500/20 p-3 rounded-lg mt-3 relative overflow-hidden">
+                      <div class="absolute inset-0 bg-gradient-to-r from-orange-400/10 to-purple-600/10"></div>
+                      <span class="text-white font-bold font-mono tracking-wider text-[11px] z-10">AtlasAI</span>
+                      <div class="flex items-center gap-2 text-white font-bold z-10">
+                        <span class="material-symbols-rounded text-orange-400 text-sm">check</span>
+                        Flat Monthly
+                      </div>
+                    </div>
                   </div>
-                  High (Expensive)
-                </div>
-                <div
-                  class="p-8 bg-purple-900/5 border-x border-purple-500/20 flex items-center gap-4 text-white font-bold text-lg relative group-hover:bg-purple-900/10 transition-colors backdrop-blur-sm">
-                  <div
-                    class="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-400 shrink-0 border border-orange-500/20 shadow-[0_0_15px_rgba(249,115,22,0.15)]">
-                    <span class="material-symbols-rounded text-base">check</span>
-                  </div>
-                  Deep Research (AI)
                 </div>
               </div>
 
-              <!-- Row 3: Cost Model -->
-              <div
-                class="grid grid-cols-4 min-w-[900px] border-b border-white/5 group hover:bg-white/[0.02] transition-colors">
-                <div class="p-8 flex items-center">
-                  <span class="text-slate-200 font-bold text-lg">Cost Model</span>
-                </div>
-                <div class="p-8 flex items-center gap-4 text-slate-400 text-lg">
-                  <div class="w-2 h-2 rounded-full bg-red-500/50 shrink-0 shadow-[0_0_10px_rgba(239,68,68,0.2)]"></div>
-                  Per Credit ($$$)
-                </div>
-                <div class="p-8 flex items-center gap-4 text-slate-400 text-lg">
-                  <div class="w-2 h-2 rounded-full bg-red-500/50 shrink-0 shadow-[0_0_10px_rgba(239,68,68,0.2)]"></div>
-                  Retainer ($$$$)
-                </div>
-                <div
-                  class="p-8 bg-purple-900/5 border-x border-purple-500/20 flex items-center gap-4 text-white font-bold text-lg relative group-hover:bg-purple-900/10 transition-colors backdrop-blur-sm">
-                  <div
-                    class="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-400 shrink-0 border border-orange-500/20 shadow-[0_0_15px_rgba(249,115,22,0.15)]">
-                    <span class="material-symbols-rounded text-base">check</span>
+              <!-- Card 4 -->
+              <div class="glass-panel p-1 rounded-2xl relative overflow-hidden">
+                <div class="bg-[#0B1221]/90 rounded-xl p-5">
+                  <h3 class="text-white font-bold text-lg mb-4 border-b border-white/10 pb-3">Data Privacy</h3>
+                  <div class="space-y-3">
+                    <div class="flex justify-between items-center text-sm">
+                      <span class="text-slate-500 font-mono tracking-wider text-[10px]">TYPICAL SAAS</span>
+                      <div class="flex items-center gap-2 text-slate-400">
+                        <div class="w-1.5 h-1.5 rounded-full bg-red-500/50"></div>
+                        Shared / Leaked
+                      </div>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                      <span class="text-slate-500 font-mono tracking-wider text-[10px]">AGENCIES</span>
+                      <div class="flex items-center gap-2 text-slate-400">
+                        <div class="w-1.5 h-1.5 rounded-full bg-yellow-500/50"></div>
+                        Varies
+                      </div>
+                    </div>
+                    <div
+                      class="flex justify-between items-center text-sm bg-purple-900/20 border border-purple-500/20 p-3 rounded-lg mt-3 relative overflow-hidden">
+                      <div class="absolute inset-0 bg-gradient-to-r from-orange-400/10 to-purple-600/10"></div>
+                      <span class="text-white font-bold font-mono tracking-wider text-[11px] z-10">AtlasAI</span>
+                      <div class="flex items-center gap-2 text-white font-bold z-10">
+                        <span class="material-symbols-rounded text-orange-400 text-sm">check</span>
+                        100% Local
+                      </div>
+                    </div>
                   </div>
-                  Flat Monthly
                 </div>
               </div>
-
-              <!-- Row 4: Data Privacy -->
-              <div class="grid grid-cols-4 min-w-[900px] group hover:bg-white/[0.02] transition-colors">
-                <div class="p-8 flex items-center">
-                  <span class="text-slate-200 font-bold text-lg">Data Privacy</span>
-                </div>
-                <div class="p-8 flex items-center gap-4 text-slate-400 text-lg">
-                  <div class="w-2 h-2 rounded-full bg-red-500/50 shrink-0 shadow-[0_0_10px_rgba(239,68,68,0.2)]"></div>
-                  Shared / Leaked
-                </div>
-                <div class="p-8 flex items-center gap-4 text-slate-400 text-lg">
-                  <div class="w-2 h-2 rounded-full bg-yellow-500/50 shrink-0 shadow-[0_0_10px_rgba(234,179,8,0.2)]">
-                  </div>
-                  Varies
-                </div>
-                <div
-                  class="p-8 bg-purple-900/5 border-x border-purple-500/20 flex items-center gap-4 text-white font-bold text-lg relative group-hover:bg-purple-900/10 transition-colors backdrop-blur-sm">
-                  <div
-                    class="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-400 shrink-0 border border-orange-500/20 shadow-[0_0_15px_rgba(249,115,22,0.15)]">
-                    <span class="material-symbols-rounded text-base">check</span>
-                  </div>
-                  100% Local / Sovereign
-                </div>
-              </div>
-
             </div>
-          </div>
 
-          <!-- Decorative Glow for the whole table -->
-          <div
-            class="absolute top-0 right-[12.5%] bottom-0 w-[25%] bg-primary-500/20 blur-3xl -z-10 pointer-events-none">
-          </div>
+            <!-- Main Glass Panel (Hidden on Mobile) -->
+            <div class="glass-panel rounded-3xl p-1.5 md:p-2 overflow-hidden ring-1 ring-white/10 hidden md:block">
+              <div class="bg-[#0B1221]/80 backdrop-blur-xl rounded-[20px] overflow-x-auto touch-pan-x">
 
+                <!-- Grid Header -->
+                <div class="grid grid-cols-4 min-w-[800px] md:min-w-[900px] border-b border-white/5">
+                  <div
+                    class="p-6 md:p-8 text-slate-500 font-mono text-[10px] md:text-sm uppercase tracking-wider font-bold">
+                    Feature</div>
+                  <div
+                    class="p-6 md:p-8 text-slate-500 font-mono text-[10px] md:text-sm uppercase tracking-wider font-bold">
+                    Typical SaaS</div>
+                  <div
+                    class="p-6 md:p-8 text-slate-500 font-mono text-[10px] md:text-sm uppercase tracking-wider font-bold">
+                    Agencies</div>
+                  <!-- Highlighted Header -->
+                  <div
+                    class="p-6 md:p-8 bg-gradient-to-b from-purple-900/20 via-purple-900/5 to-transparent border-x border-t border-purple-500/30 rounded-t-xl relative -mt-1 -mr-px lg:-mt-0 lg:-mr-0 shadow-[0_-10px_40px_rgba(168,85,247,0.15)]">
+                    <div
+                      class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600">
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="text-white font-bold tracking-wide text-base md:text-lg text-shadow-glow">AtlasAI</span>
+                      <span
+                        class="px-2 py-0.5 rounded text-[10px] font-bold bg-gradient-to-r from-orange-500 to-purple-600 text-white shadow-lg shadow-orange-500/40 tracking-wider">YOU</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 1: Data Source -->
+                <div
+                  class="grid grid-cols-4 min-w-[900px] border-b border-white/5 group hover:bg-white/[0.02] transition-colors">
+                  <div class="p-8 flex items-center">
+                    <span class="text-slate-200 font-bold text-lg">Data Source</span>
+                  </div>
+                  <div class="p-8 flex items-center gap-4 text-slate-400 text-lg relative">
+                    <div class="w-2 h-2 rounded-full bg-red-500/50 shrink-0 shadow-[0_0_10px_rgba(239,68,68,0.2)]">
+                    </div>
+                    Stale Database
+                    <svg
+                      class="w-16 h-px absolute bottom-0 left-0 bg-gradient-to-r from-transparent via-red-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+                      preserveAspectRatio="none"></svg>
+                  </div>
+                  <div class="p-8 flex items-center gap-4 text-slate-400 text-lg relative">
+                    <div class="w-2 h-2 rounded-full bg-yellow-500/50 shrink-0 shadow-[0_0_10px_rgba(234,179,8,0.2)]">
+                    </div>
+                    Manual Scraping
+                  </div>
+                  <!-- Highlighted Cell -->
+                  <div
+                    class="p-8 bg-purple-900/5 border-x border-purple-500/20 flex items-center gap-4 text-white font-bold text-lg relative group-hover:bg-purple-900/10 transition-colors backdrop-blur-sm">
+                    <div
+                      class="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-400 shrink-0 border border-orange-500/20 shadow-[0_0_15px_rgba(249,115,22,0.15)]">
+                      <span class="material-symbols-rounded text-base">check</span>
+                    </div>
+                    Live Web & Social
+                    <div
+                      class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 2: Personalization -->
+                <div
+                  class="grid grid-cols-4 min-w-[900px] border-b border-white/5 group hover:bg-white/[0.02] transition-colors">
+                  <div class="p-8 flex items-center">
+                    <span class="text-slate-200 font-bold text-lg">Personalization</span>
+                  </div>
+                  <div class="p-8 flex items-center gap-4 text-slate-400 text-lg">
+                    <div class="w-2 h-2 rounded-full bg-red-500/50 shrink-0 shadow-[0_0_10px_rgba(239,68,68,0.2)]">
+                    </div>
+                    Basic Templates
+                  </div>
+                  <div class="p-8 flex items-center gap-4 text-slate-400 text-lg">
+                    <div class="w-2 h-2 rounded-full bg-green-500/50 shrink-0 shadow-[0_0_10px_rgba(34,197,94,0.2)]">
+                    </div>
+                    High (Expensive)
+                  </div>
+                  <div
+                    class="p-8 bg-purple-900/5 border-x border-purple-500/20 flex items-center gap-4 text-white font-bold text-lg relative group-hover:bg-purple-900/10 transition-colors backdrop-blur-sm">
+                    <div
+                      class="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-400 shrink-0 border border-orange-500/20 shadow-[0_0_15px_rgba(249,115,22,0.15)]">
+                      <span class="material-symbols-rounded text-base">check</span>
+                    </div>
+                    Deep Research (AI)
+                  </div>
+                </div>
+
+                <!-- Row 3: Cost Model -->
+                <div
+                  class="grid grid-cols-4 min-w-[900px] border-b border-white/5 group hover:bg-white/[0.02] transition-colors">
+                  <div class="p-8 flex items-center">
+                    <span class="text-slate-200 font-bold text-lg">Cost Model</span>
+                  </div>
+                  <div class="p-8 flex items-center gap-4 text-slate-400 text-lg">
+                    <div class="w-2 h-2 rounded-full bg-red-500/50 shrink-0 shadow-[0_0_10px_rgba(239,68,68,0.2)]">
+                    </div>
+                    Per Credit ($$$)
+                  </div>
+                  <div class="p-8 flex items-center gap-4 text-slate-400 text-lg">
+                    <div class="w-2 h-2 rounded-full bg-red-500/50 shrink-0 shadow-[0_0_10px_rgba(239,68,68,0.2)]">
+                    </div>
+                    Retainer ($$$$)
+                  </div>
+                  <div
+                    class="p-8 bg-purple-900/5 border-x border-purple-500/20 flex items-center gap-4 text-white font-bold text-lg relative group-hover:bg-purple-900/10 transition-colors backdrop-blur-sm">
+                    <div
+                      class="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-400 shrink-0 border border-orange-500/20 shadow-[0_0_15px_rgba(249,115,22,0.15)]">
+                      <span class="material-symbols-rounded text-base">check</span>
+                    </div>
+                    Flat Monthly
+                  </div>
+                </div>
+
+                <!-- Row 4: Data Privacy -->
+                <div class="grid grid-cols-4 min-w-[900px] group hover:bg-white/[0.02] transition-colors">
+                  <div class="p-8 flex items-center">
+                    <span class="text-slate-200 font-bold text-lg">Data Privacy</span>
+                  </div>
+                  <div class="p-8 flex items-center gap-4 text-slate-400 text-lg">
+                    <div class="w-2 h-2 rounded-full bg-red-500/50 shrink-0 shadow-[0_0_10px_rgba(239,68,68,0.2)]">
+                    </div>
+                    Shared / Leaked
+                  </div>
+                  <div class="p-8 flex items-center gap-4 text-slate-400 text-lg">
+                    <div class="w-2 h-2 rounded-full bg-yellow-500/50 shrink-0 shadow-[0_0_10px_rgba(234,179,8,0.2)]">
+                    </div>
+                    Varies
+                  </div>
+                  <div
+                    class="p-8 bg-purple-900/5 border-x border-purple-500/20 flex items-center gap-4 text-white font-bold text-lg relative group-hover:bg-purple-900/10 transition-colors backdrop-blur-sm">
+                    <div
+                      class="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-400 shrink-0 border border-orange-500/20 shadow-[0_0_15px_rgba(249,115,22,0.15)]">
+                      <span class="material-symbols-rounded text-base">check</span>
+                    </div>
+                    100% Local / Sovereign
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Decorative Glow for the whole table -->
+            <div
+              class="absolute top-0 right-[12.5%] bottom-0 w-[25%] bg-primary-500/20 blur-3xl -z-10 pointer-events-none">
+            </div>
+
+          </div>
         </div>
-      </div>
     </section>
 
     <!-- Pricing: Premium Glassmorphism -->

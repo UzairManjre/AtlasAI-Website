@@ -1,0 +1,365 @@
+Landing page + marketing & business content for your product
+
+Below is a complete, copy-ready document you can use to build the landing page, sales collateral, and internal marketing checklist for Local Hunter.
+I read everything you shared — product flow, agents (Miner/Spider/Judge/Sniper), Ollama usage, SQLite, local LLM approach, pricing, pilot plan and ₹2.5L fund allocation — and folded those facts into the copy and playbooks. Local deployment is presented as a valuable advantage (a plus), but the page leads with what the product does.
+
+Use this as a single source: hero text, features, “how it works”, pricing, FAQs, demo script, sales outreach, GTM checklist, KPIs and analytics events.
+
+1 — Hero (top of page)
+
+Headline
+Automate your B2B outbound: find real prospects, research them, and send a first-touch email — all in one pipeline.
+
+Subheadline
+Local Hunter turns cold outreach into researched outreach — faster replies, fewer dead lists, and predictable results.
+
+Primary CTA (button)
+Start a free pilot
+
+Secondary CTA
+Watch 90s demo
+
+Supporting one-liner under CTAs
+Works on modest hardware — we handle discovery, research, scoring and the first email. You review and send.
+
+2 — 3 value propositions (near hero — short, punchy)
+
+Real research, not templates. Emails reference real issues we found on the prospect’s site — people reply because it reads like it was written by someone who actually looked.
+
+One connected pipeline. Prospecting → website audit → qualification → personalized email — no tool-hopping and no manual copy/paste.
+
+Built for business workflows. Designed for agencies, consultants and manufacturers who need predictable, repeatable outbound.
+
+(Under each bullet add one line of proof: “Example: 4s mobile load time noted in email → 23% higher reply rate in pilot.” — replace with your pilot stat when available.)
+
+3 — Key features (sections with short explainer & benefit)
+
+Each feature is a short headline then a 1–2 sentence benefit statement.
+
+Autonomous Agents (works like an SDR)
+
+Search Worker (Miner): finds verified businesses using Maps + targeted queries.
+
+Spider (Scraper): visits sites, finds contact info, examines tech & broken links.
+
+AI Judge: assigns fit score and filters noise.
+
+Sniper: crafts the research-first first-touch email.
+
+Hyper-personalized first emails
+Emails mention concrete findings (site speed, tech, broken links, unique selling points) so outreach sounds researched — not templated.
+
+Smart queue & lead recycling
+System rechecks leads every 14 days for new signals and updates scores automatically.
+
+Easy setup & local persistence
+Runs with Node.js + SQLite; uses local LLM server via Ollama (if used). No mandatory cloud subscription.
+
+Campaign UI & review flow
+You always review before send — bulk send options for later, but the first send is a reviewed, high-confidence email.
+
+Extensible & integrable
+CSV export, CRM import, and simple webhooks for sending integrations.
+
+4 — How it works (simple 5-step flow for the landing page)
+
+Describe your business — give a few lines about what you sell and who you want.
+
+We generate the hunt — the system creates smart queries and mines Maps & the web.
+
+We research each lead — site audit, contact discovery, tech and UX checks.
+
+We score & prioritize — AI Judge returns a 0–100 fit score.
+
+We draft a first email — you review and send or bulk schedule.
+
+(Insert 3 illustrated boxes/icons: Discover → Analyze → Score → Email)
+
+5 — Pricing (simple, honest, clearly framed)
+
+Starter — ₹2,000 / month
+
+500 leads / month, basic scraping, manual send flow, email drafts limited to 100/month
+
+Best for solo founders & small consultancies
+
+Growth — ₹5,000 / month (recommended)
+
+2,000 leads / month, AI Judge scoring, Sniper email drafts, lead recycling, single-seat + campaign view
+
+Best for small agencies and sales teams
+
+Pro — ₹12,000 / month
+
+10,000 leads / month, priority support, team seats, CRM connectors, custom prompts & higher concurrency
+
+Best for digital agencies & growth teams
+
+One-time license (select customers)
+
+3-year local license: ₹1.8L – ₹2.5L (negotiable) + optional annual maintenance ₹30k–₹50k.
+
+Enterprise on-prem package: ₹3L–₹6L + SLA & custom integration (ideal for regulators/large teams).
+
+Note copy under pricing
+No hidden cloud fees. You pay for the product and support — compute remains on your side.
+
+6 — Quick comparison (on the landing page, short table)
+
+Local Hunter vs common options (one line each):
+
+SaaS prospectors (Apollo/Hunter): quick lists, cloud fees, generic outreach.
+
+In-house spreadsheets + copywriters: time-consuming, inconsistent.
+
+Agencies: expensive, long timelines.
+
+Local Hunter: connected pipeline, research-first emails, predictable monthly cost.
+
+7 — Social proof / Pilot CTA
+
+Add a bold callout:
+Pilot Offer: 5 free / discounted pilot slots for the first 10 businesses who sign up this month — includes setup help and a performance review.
+
+(Use a small form: name, company, email, website, short “what you sell” field.)
+
+8 — Demo video script (90s — paste into video production)
+
+0–10s: Title card — “Local Hunter — research-first B2B outreach”
+
+10–30s: Show product entering target ICP and generating query (screen capture) — voice: “Tell Local Hunter who you are and who you want to reach.”
+
+30–55s: Show search/spy logs, site audit summary and a sample “issue found” (e.g., “mobile load: 4s”). Voice: “It reads the site and finds real problems worth mentioning.”
+
+55–75s: Show the drafted email with highlighted lines pulled from the audit. Voice: “The output is a concise, research-first email ready to send.”
+
+75–90s: Closing card: CTA to start pilot + contact info.
+
+9 — Landing page FAQ (use these exact Q&A)
+
+Q: Does data leave my network?
+A: By default the system runs on your machine and stores data locally (SQLite). If you opt into cloud services or ask us to host, only then will data be transmitted — and only with explicit agreement.
+
+Q: Do I need a GPU?
+A: No for basic scraping & small runs. For faster local LLM inference we recommend a 6–8GB GPU for comfortable performance; CPU-only works at slower speed.
+
+Q: What models does it use?
+A: The product is model-agnostic — we support local LLMs via a local LLM server such as Ollama. You can use smaller, fast models for vision/score and a larger marketing model for copy.
+
+Q: Is scraping legal?
+A: We follow robots.txt by default and provide configuration to respect site policies. Users must comply with local laws and best practices. We also provide guidance on ethical outreach.
+
+Q: How long to set up?
+A: With basic familiarity: ~1–2 hours for installation and model pulling. Our onboarding service (paid) handles the rest.
+
+Q: What support do you offer?
+A: Email support for all plans; priority and hands-on setup for Pro and enterprise customers.
+
+10 — Case study template (quick paste for pilot results)
+
+Client: [Company name, city]
+Goal: Increase qualified outbound meetings for [product/service].
+Approach: Local Hunter targeted [industry/role], scraped 2,000 leads and scored them. Top 250 leads were audited manually and 100 first-touch emails were sent.
+Results (30 days):
+
+Replies: XX (YY% reply rate)
+
+Meetings booked: ZZ (AA% conversion from reply)
+
+Notable feedback: “[short customer quote]”
+
+(Use real numbers after pilots. This is the most persuasive asset.)
+
+11 — Lead magnet & capture ideas (for conversion)
+
+Free downloadable: “Outbound playbook — 5 research hooks that increase reply rates” (PDF)
+
+7-day pilot: set up & 100 researched emails for ₹499 (intro pricing)
+
+Webinar: “How to build outreach that doesn’t feel cold” (60 min)
+
+12 — Contact / demo form (fields)
+
+Name (required)
+
+Company (required)
+
+Email (required)
+
+Website (required)
+
+Role (dropdown)
+
+Monthly outbound budget (optional)
+
+Best time for a demo (optional)
+
+Checkbox: “I want a pilot” (yes/no)
+
+Include GDPR-style opt-in text: “I agree to be contacted about the pilot.”
+
+13 — Sales playbook (founder-led outreach)
+
+Objective: convert pilot → paid in 60 days.
+
+Week 0 (reachout)
+
+Send pilot offer via cold email (template below).
+
+Follow up LinkedIn message to decision maker.
+
+Week 1 (demo)
+
+20–30 minute demo, show live site audit and sample email. Ask for permission to run a small pilot.
+
+Week 2–4 (pilot execution)
+
+Run 200–500 leads, send first batch of 20 tested emails manually. Provide daily metrics and tweaks.
+
+End of pilot
+
+Present case study and ROI. Offer 20% discount for first 3 months if they convert within 7 days.
+
+14 — Outreach email templates (use as-is, research-first style)
+
+Cold intro (pilot offer)
+Subject: Quick test that finds real leads for [company name]
+Hi [name],
+I built a tool that finds businesses likely to buy [what you sell] and writes a short, researched email for each. We’re running a small pilot for [industry] companies in [city] — I can set up 100 researched emails and show results in 2 weeks. Interested?
+— [Your name], Local Hunter
+
+Post-demo follow-up
+Subject: Demo notes + pilot plan for [company]
+Hi [name],
+Thanks for the demo call. As promised, I’ll run a 2-week pilot: 500 leads, top 50 scored and 20 researched emails for review. If it looks good, we’ll expand. When’s good to begin?
+— [Your name]
+
+Pilot to paid convert (closing)
+Subject: Pilot results — next steps (short)
+Hi [name],
+Pilot is complete: [metric snapshot]. We recommend Growth plan at ₹5,000/month to scale this to 2,000 leads / month. If you sign up this week, I’ll include one custom campaign setup free. Shall I send the invoice?
+— [Your name]
+
+15 — Objection handling (common things panels/customers will ask)
+
+“We already use X tool”
+
+Response: “Great — this replaces manual steps and gives researched emails. Many teams keep CRM + Local Hunter for outreach.”
+
+“Is this legal?”
+
+Response: “We respect robots.txt and provide a compliance guide. For high-risk or regulated outreach we offer enterprise deployment & legal review.”
+
+“I’ll need developer help”
+
+Response: “We offer an onboarding service and step-by-step scripts; most customers can run basic pilots without deep engineering help.”
+
+“Why pay monthly?”
+
+Response: “You’re paying for continuous scraping, prompt tuning, updates and campaign improvements — like paying a junior SDR but cheaper.”
+
+16 — KPI targets & dashboard fields (what to show on landing + for internal)
+
+Public-facing (for marketing/trust): pilot stats once available: reply rate, meetings booked, pilot → paid conversion.
+
+Internal KPIs to measure:
+
+MRR (monthly recurring revenue)
+
+Paid customers (count) — target 18 to break even
+
+Pilot→paid conversion % — target 30%
+
+Avg reply rate (per campaign) — pilot target 10–20% for warmed emails
+
+CAC (cost to acquire a paid customer)
+
+Churn rate monthly
+
+17 — SEO & meta copy (paste into page metadata)
+
+Meta title: Local Hunter — Automated B2B Lead Generation & Outreach
+Meta description: Local Hunter finds, researches and drafts personalized outreach for B2B businesses. One pipeline — prospecting, audit, qualification and first-touch emails. Start a pilot.
+Top keywords to target: b2b lead generation india, automated lead research, personalized cold email tool, on-prem lead generation, outreach automation for agencies
+
+18 — Trust & legal snippet (short copy for footer or trust area)
+
+“Privacy-first option: local deployment keeps data on your machine.”
+
+“We follow responsible scraping practices and recommend opt-out checks.”
+
+“Terms of use and privacy policy available — contact us for enterprise SLA.”
+
+19 — Technical specs (for tech-savvy decision makers)
+
+Backend: Node.js (v18+) + Workers (background processes)
+
+Persistence: SQLite (local-hunter.db) via Drizzle ORM
+
+Frontend: React + Tailwind + Radix UI
+
+Local LLM: integrates with local LLM server (e.g., Ollama) — supports smaller vision models for Judge and a larger marketing model for Sniper
+
+Typical hardware: CPU only OK for small runs; 6–8GB GPU recommended for faster local inference
+
+Export: CSV, basic CRM webhooks
+
+20 — Onboarding checklist (what you deliver during a pilot)
+
+Install checklist & one-line install script
+
+Pull sample models instructions (ollama pull ...)
+
+Configure target ICP & run small discovery
+
+Deliver 100 researched emails for review
+
+Weekly performance summary + optimization call
+
+Post-pilot ROI deck and recommended plan
+
+21 — Lead capture & nurture (what to automate next)
+
+Capture demo requests → send an automated “what to expect” email with calendar link
+
+Nurture leads who don’t convert with “case study” drip (2 emails over 14 days)
+
+Use pilot metrics to create a short, sharable case study
+
+22 — Visual & UX suggestions for the landing page
+
+Clean hero, 2 CTAs (pilot + demo)
+
+3 icons aligned under hero for the three values (Research, Automate, Send)
+
+Screenshots: show site audit output, scorecard, email draft (highlighted lines)
+
+Add “pilot results” strip with KPIs after you have real data
+
+Keep copy short; use plain language and founder voice
+
+23 — Quick tasks for you to complete this week (actionable)
+
+Record the 90s demo video using the script above.
+
+Prepare the pilot application form and link it in the hero.
+
+Draft 2 pilot case studies (templates) to use after initial pilots.
+
+Create the pricing table and legal T&Cs (basic).
+
+Prepare onboarding script & one-line install command.
+
+24 — Final copy-ready blocks (paste into the page where needed)
+
+Hero section copy (compact):
+Automate B2B outreach with researched emails. Local Hunter finds prospects, audits their websites and drafts first-touch messages you can trust. Start a 2-week pilot.
+
+Feature headline + 1-liner:
+Autonomous agents that do an SDR’s heavy lifting — find prospects, research them, score them, and draft outreach.
+
+Pricing CTA:
+Pick a plan that fits your team. Start with a 2-week pilot.
+
+Pilot CTA small blurb:
+Limited pilot slots — includes setup and a performance review. Apply now.

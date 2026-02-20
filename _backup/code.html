@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AtlasAI - The Agentic AI for Automated Growth</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7f00ff", // Electric Purple
+                        "primary-dark": "#4c0099",
+                        "accent": "#00ffff", // Neon Cyan
+                        "background-dark": "#0a0510", // Deep midnight/charcoal
+                        "surface": "#130b1f", // Slightly lighter surface
+                        "surface-highlight": "#1e1230",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Space Grotesk", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'hero-glow': "radial-gradient(circle at center, rgba(127, 0, 255, 0.15) 0%, rgba(10, 5, 16, 0) 70%)",
+                        'card-gradient': "linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)",
+                        'border-gradient': "linear-gradient(to bottom right, rgba(127, 0, 255, 0.5), rgba(255, 255, 255, 0.1))",
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0a0510;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .glass-panel {
+            background: rgba(19, 11, 31, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card-hover:hover {
+            border-color: rgba(127, 0, 255, 0.4);
+            box-shadow: 0 0 20px rgba(127, 0, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(127, 0, 255, 0.5);
+        }
+
+        .neon-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0510; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #332244; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7f00ff; 
+        }
+    </style>
+</head>
+<body class="font-display antialiased selection:bg-primary selection:text-white">
+<!-- Ambient Background Effects -->
+<div class="fixed inset-0 pointer-events-none z-0">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-primary/10 rounded-full blur-[100px]"></div>
+<div class="absolute top-[40%] left-[30%] w-[20%] h-[20%] bg-accent/5 rounded-full blur-[80px]"></div>
+</div>
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#0a0510]/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center shadow-[0_0_15px_rgba(127,0,255,0.5)]">
+<span class="material-symbols-outlined text-white text-xl">smart_toy</span>
+</div>
+<span class="text-xl font-bold tracking-tight">AtlasAI</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#">Features</a>
+<a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#">Solutions</a>
+<a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#">Pricing</a>
+<a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#">Docs</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex text-sm font-medium text-white hover:text-primary transition-colors">Login</button>
+<button class="relative group overflow-hidden rounded-lg bg-primary px-5 py-2.5 transition-all hover:bg-primary-dark hover:shadow-[0_0_20px_rgba(127,0,255,0.4)]">
+<span class="relative z-10 text-sm font-bold text-white">Get Started</span>
+<div class="absolute inset-0 -translate-x-full group-hover:translate-x-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-500"></div>
+</button>
+</div>
+</div>
+</nav>
+<main class="relative z-10 pt-32 pb-20">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-6 mb-24">
+<div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
+<!-- Hero Content -->
+<div class="flex-1 text-center lg:text-left z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
+<span class="flex h-2 w-2 rounded-full bg-accent animate-pulse"></span>
+<span class="text-xs font-medium tracking-wide text-accent uppercase">V2.0 is live</span>
+</div>
+<h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 tracking-tight">
+                        The Agentic AI for <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-primary to-accent animate-gradient-x">Automated Growth</span>
+</h1>
+<p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Deploy autonomous agents to scrape, qualify, and outreach at scale. Experience the future of lead generation with 
+                        <span class="text-white font-medium">zero manual effort</span>.
+                    </p>
+<div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+<button class="h-12 px-8 rounded-lg bg-white text-black font-bold text-sm hover:bg-gray-200 transition-colors flex items-center gap-2">
+<span>Start Free Trial</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+<button class="h-12 px-8 rounded-lg bg-white/5 border border-white/10 text-white font-bold text-sm hover:bg-white/10 transition-colors backdrop-blur-sm">
+                            View Demo
+                        </button>
+</div>
+<div class="mt-10 flex items-center justify-center lg:justify-start gap-6 text-gray-500">
+<span class="text-xs uppercase tracking-widest font-semibold">Trusted by</span>
+<div class="flex gap-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+<!-- Placeholder Logos -->
+<div class="h-6 w-20 bg-white/20 rounded"></div>
+<div class="h-6 w-20 bg-white/20 rounded"></div>
+<div class="h-6 w-20 bg-white/20 rounded"></div>
+</div>
+</div>
+</div>
+<!-- Hero Visual - Floating Glass Card -->
+<div class="flex-1 w-full max-w-[500px] lg:max-w-none perspective-1000">
+<div class="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square animate-float">
+<!-- Background Glow behind card -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/30 to-accent/10 rounded-full blur-[60px] transform scale-75"></div>
+<!-- Main Dashboard Card -->
+<div class="absolute inset-x-4 inset-y-8 glass-panel rounded-2xl p-6 border-t border-l border-white/10 transform rotate-y-12 rotate-x-6 hover:rotate-0 transition-transform duration-700 ease-out">
+<div class="flex justify-between items-center mb-6 border-b border-white/5 pb-4">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+<div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+<div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+</div>
+<div class="text-xs font-mono text-gray-400">STATUS: ACTIVE</div>
+</div>
+<!-- Stats Grid inside card -->
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="p-4 rounded-xl bg-black/20 border border-white/5">
+<p class="text-xs text-gray-400 mb-1">Leads Scraped</p>
+<p class="text-2xl font-bold text-white tracking-tight">12,400</p>
+<p class="text-xs text-accent mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +12%
+                                    </p>
+</div>
+<div class="p-4 rounded-xl bg-black/20 border border-white/5">
+<p class="text-xs text-gray-400 mb-1">Revenue</p>
+<p class="text-2xl font-bold text-white tracking-tight">$42k</p>
+<p class="text-xs text-accent mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +28%
+                                    </p>
+</div>
+</div>
+<!-- Activity Feed -->
+<div class="space-y-3">
+<div class="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/5">
+<div class="w-8 h-8 rounded bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">smart_toy</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium truncate">Agent Alpha-1</p>
+<p class="text-xs text-gray-400 truncate">Qualifying leads from LinkedIn...</p>
+</div>
+<div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/5">
+<div class="w-8 h-8 rounded bg-accent/20 flex items-center justify-center text-accent">
+<span class="material-symbols-outlined text-sm">mail</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium truncate">Outreach Bot</p>
+<p class="text-xs text-gray-400 truncate">Sent 145 personalized emails</p>
+</div>
+<div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+</div>
+</div>
+</div>
+<!-- Floating Elements -->
+<div class="absolute -right-4 top-20 glass-panel p-3 rounded-lg animate-bounce duration-[3000ms]">
+<span class="material-symbols-outlined text-accent text-2xl">bolt</span>
+</div>
+<div class="absolute -left-2 bottom-20 glass-panel p-3 rounded-lg animate-bounce duration-[4000ms]">
+<span class="material-symbols-outlined text-primary text-2xl">auto_awesome</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Banner -->
+<section class="border-y border-white/5 bg-white/[0.02]">
+<div class="max-w-7xl mx-auto px-6 py-10">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col items-center md:items-start">
+<span class="text-3xl font-bold text-white mb-1">10k+</span>
+<span class="text-sm text-gray-400 uppercase tracking-wide">Active Agents</span>
+</div>
+<div class="flex flex-col items-center md:items-start">
+<span class="text-3xl font-bold text-white mb-1">50M+</span>
+<span class="text-sm text-gray-400 uppercase tracking-wide">Leads Processed</span>
+</div>
+<div class="flex flex-col items-center md:items-start">
+<span class="text-3xl font-bold text-white mb-1">99.9%</span>
+<span class="text-sm text-gray-400 uppercase tracking-wide">Uptime</span>
+</div>
+<div class="flex flex-col items-center md:items-start">
+<span class="text-3xl font-bold text-white mb-1">24/7</span>
+<span class="text-sm text-gray-400 uppercase tracking-wide">Automated Support</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Features -->
+<section class="py-24 max-w-7xl mx-auto px-6" id="features">
+<div class="mb-16 text-center">
+<h2 class="text-3xl md:text-5xl font-bold mb-4">Autonomous Intelligence</h2>
+<p class="text-gray-400 max-w-xl mx-auto">Our bento-grid architecture powers your growth stack with precision and speed. The future of autonomous lead gen is here.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+<!-- Large Feature Card -->
+<div class="md:col-span-2 glass-panel rounded-2xl p-8 relative overflow-hidden group glass-card-hover">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-highlight flex items-center justify-center mb-6 border border-white/10 text-primary">
+<span class="material-symbols-outlined text-2xl">hub</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">Multi-Source Scraping</h3>
+<p class="text-gray-400 max-w-sm">Harvest leads from LinkedIn, Twitter, and custom sources instantly with our proprietary scraping engine that bypasses modern captchas.</p>
+</div>
+<div class="mt-8 w-full h-32 rounded-lg bg-black/30 border border-white/5 relative overflow-hidden">
+<!-- Abstract Visualization of scraping -->
+<div class="absolute inset-0 flex items-center justify-around opacity-50">
+<div class="w-1 h-16 bg-gradient-to-b from-primary to-transparent rounded-full animate-pulse"></div>
+<div class="w-1 h-24 bg-gradient-to-b from-accent to-transparent rounded-full animate-pulse delay-75"></div>
+<div class="w-1 h-12 bg-gradient-to-b from-primary to-transparent rounded-full animate-pulse delay-150"></div>
+<div class="w-1 h-20 bg-gradient-to-b from-accent to-transparent rounded-full animate-pulse delay-300"></div>
+<div class="w-1 h-14 bg-gradient-to-b from-primary to-transparent rounded-full animate-pulse delay-500"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tall Feature Card -->
+<div class="md:row-span-2 glass-panel rounded-2xl p-8 relative overflow-hidden group glass-card-hover">
+<div class="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10 h-full flex flex-col">
+<div class="w-12 h-12 rounded-lg bg-surface-highlight flex items-center justify-center mb-6 border border-white/10 text-accent">
+<span class="material-symbols-outlined text-2xl">analytics</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">Real-time Analytics</h3>
+<p class="text-gray-400 mb-8">Visualization of campaign performance and agent activity.</p>
+<div class="flex-1 rounded-lg bg-black/30 border border-white/5 p-4 flex flex-col gap-3">
+<!-- Fake Charts -->
+<div class="flex items-end justify-between h-32 gap-2 px-2">
+<div class="w-full bg-primary/20 rounded-t h-[40%] group-hover:h-[60%] transition-all duration-500 relative group/bar">
+<div class="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 text-[10px] opacity-0 group-hover/bar:opacity-100 transition-opacity">40%</div>
+</div>
+<div class="w-full bg-accent/20 rounded-t h-[60%] group-hover:h-[80%] transition-all duration-500 delay-75 relative group/bar">
+<div class="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 text-[10px] opacity-0 group-hover/bar:opacity-100 transition-opacity">60%</div>
+</div>
+<div class="w-full bg-primary/20 rounded-t h-[30%] group-hover:h-[50%] transition-all duration-500 delay-150 relative group/bar">
+<div class="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 text-[10px] opacity-0 group-hover/bar:opacity-100 transition-opacity">30%</div>
+</div>
+<div class="w-full bg-accent/20 rounded-t h-[75%] group-hover:h-[90%] transition-all duration-500 delay-200 relative group/bar">
+<div class="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 text-[10px] opacity-0 group-hover/bar:opacity-100 transition-opacity">75%</div>
+</div>
+</div>
+<div class="flex justify-between text-xs text-gray-500 pt-2 border-t border-white/5">
+<span>Mon</span>
+<span>Tue</span>
+<span>Wed</span>
+<span>Thu</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Standard Feature Card 1 -->
+<div class="glass-panel rounded-2xl p-8 relative overflow-hidden group glass-card-hover">
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl group-hover:bg-primary/30 transition-colors"></div>
+<div class="relative z-10">
+<div class="w-12 h-12 rounded-lg bg-surface-highlight flex items-center justify-center mb-6 border border-white/10 text-white">
+<span class="material-symbols-outlined text-2xl">psychology</span>
+</div>
+<h3 class="text-xl font-bold mb-2">AI Personalization</h3>
+<p class="text-sm text-gray-400">Generate hyper-personalized outreach messages that convert.</p>
+</div>
+</div>
+<!-- Standard Feature Card 2 -->
+<div class="glass-panel rounded-2xl p-8 relative overflow-hidden group glass-card-hover">
+<div class="absolute -right-10 -bottom-10 w-32 h-32 bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-colors"></div>
+<div class="relative z-10">
+<div class="w-12 h-12 rounded-lg bg-surface-highlight flex items-center justify-center mb-6 border border-white/10 text-white">
+<span class="material-symbols-outlined text-2xl">sync_alt</span>
+</div>
+<h3 class="text-xl font-bold mb-2">CRM Sync</h3>
+<p class="text-sm text-gray-400">Seamlessly push qualified leads to HubSpot or Salesforce.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 px-6">
+<div class="max-w-5xl mx-auto relative">
+<!-- Glowing background for CTA -->
+<div class="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/5 to-primary/20 rounded-3xl blur-xl"></div>
+<div class="relative glass-panel rounded-3xl p-12 text-center border border-white/10 overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+<h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">Ready to automate your growth?</h2>
+<p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">Join forward-thinking revenue teams who are scaling their outreach with autonomous agents today.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="px-8 py-4 rounded-lg bg-primary text-white font-bold text-base hover:bg-primary-dark shadow-[0_0_20px_rgba(127,0,255,0.3)] transition-all transform hover:scale-105">
+                            Start Your Free Trial
+                        </button>
+<button class="px-8 py-4 rounded-lg bg-transparent border border-white/20 text-white font-bold text-base hover:bg-white/5 transition-colors">
+                            Schedule a Demo
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="border-t border-white/5 bg-[#050308] relative z-10">
+<div class="max-w-7xl mx-auto px-6 py-12 md:py-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<div class="w-6 h-6 rounded bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm">smart_toy</span>
+</div>
+<span class="text-lg font-bold">AtlasAI</span>
+</div>
+<p class="text-gray-500 text-sm leading-relaxed">
+                        The world's first agentic AI platform for autonomous revenue growth. Scrape, qualify, and close deals while you sleep.
+                    </p>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Platform</h4>
+<ul class="space-y-4 text-sm text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">Agents</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Data Scraping</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Integrations</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Security</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Resources</h4>
+<ul class="space-y-4 text-sm text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">Documentation</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">API Reference</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Community</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Legal</h4>
+<ul class="space-y-4 text-sm text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-gray-600 text-sm">© 2024 AtlasAI Inc. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="text-gray-500 hover:text-white transition-colors" href="#">
+<span class="sr-only">Twitter</span>
+<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+<a class="text-gray-500 hover:text-white transition-colors" href="#">
+<span class="sr-only">GitHub</span>
+<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

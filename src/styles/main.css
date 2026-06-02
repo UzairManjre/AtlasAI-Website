@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0');
 
 /* ============================================
@@ -9,8 +9,8 @@ html {
 }
 
 body {
-  background-color: #02040a;
-  color: #e2e8f0;
+  background-color: #fafbfc;
+  color: #0f2e2e;
   overflow-x: hidden;
 }
 
@@ -20,7 +20,7 @@ body {
 #scroll-progress {
   height: 3px;
   width: 0%;
-  background: linear-gradient(to right, #a855f7, #f97316);
+  background: linear-gradient(to right, #b9b4d1, #9cb39b);
   transition: width 0.1s linear;
   position: fixed;
   top: 0;
@@ -30,6 +30,50 @@ body {
 }
 
 /* ============================================
+   ROTATING TAGLINE
+   ============================================ */
+/*
+  Playfair Display Italic metrics:
+    cap-height  ≈ 0.71em above baseline
+    descenders  ≈ 0.29em below baseline
+    total ink   ≈ 1.00em
+
+  line-height: 1 removes half-leading so the
+  word element is exactly as tall as the ink.
+
+  Container height 1.0em → holds full ink height.
+  vertical-align: -0.29em → shifts box down so
+    bottom sits 0.29em below parent baseline
+    (descenders fit inside), and
+    top sits 0.71em above parent baseline
+    (cap-height flush with surrounding text).
+*/
+#rotating-container {
+  overflow: visible !important;
+  height: 1.3em !important;
+  vertical-align: -0.38em !important;
+  opacity: 0;
+  animation: rotatingWordFadeIn 1.2s ease-out 0.55s forwards;
+}
+
+@keyframes rotatingWordFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rotating-word {
+  line-height: 1 !important;
+  padding-bottom: 0.3em !important;
+}
+
+
+/* ============================================
    NAVBAR
    ============================================ */
 nav {
@@ -37,11 +81,11 @@ nav {
 }
 
 nav.nav-scrolled {
-  background: rgba(2, 4, 10, 0.9) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  border-bottom-color: rgba(13, 148, 136, 0.15);
+  box-shadow: 0 4px 30px rgba(13, 148, 136, 0.05);
 }
 
 /* ============================================
@@ -189,11 +233,11 @@ nav.nav-scrolled {
    GLASSMORPHISM
    ============================================ */
 .glass-panel {
-  background: rgba(11, 16, 27, 0.6);
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(13, 148, 136, 0.15);
+  box-shadow: 0 10px 30px -10px rgba(13, 148, 136, 0.08);
 }
 
 .glass-border {
@@ -215,11 +259,11 @@ nav.nav-scrolled {
 }
 
 .glass-card-dark {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(13, 148, 136, 0.15);
+  box-shadow: 0 20px 40px -15px rgba(13, 148, 136, 0.08);
 }
 
 /* ============================================
@@ -283,7 +327,7 @@ nav.nav-scrolled {
 }
 
 .text-cinema {
-  background: linear-gradient(to right, #f97316 20%, #a855f7 100%);
+  background: linear-gradient(to right, #059669 0%, #022c22 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -430,10 +474,10 @@ nav.nav-scrolled {
   position: absolute;
   inset: -2px;
   background: conic-gradient(from var(--border-angle, 0deg),
-      #a855f7,
-      #f97316,
-      #ec4899,
-      #a855f7);
+      #2dd4bf,
+      #0d9488,
+      #115e59,
+      #2dd4bf);
   border-radius: inherit;
   z-index: -2;
   animation: rotate-border 4s linear infinite;
@@ -443,7 +487,7 @@ nav.nav-scrolled {
   content: '';
   position: absolute;
   inset: 0;
-  background: #0a0a19;
+  background: #ffffff;
   border-radius: inherit;
   z-index: -1;
 }
@@ -621,4 +665,310 @@ select {
 .reveal.reveal-rightPerspective.revealed {
   transform: translateX(0) scale(1) rotateY(0);
   opacity: 1;
+}
+
+/* ============================================
+   FLOW FIELD BACKGROUND
+   ============================================ */
+.metaball-container {
+  background-color: #fafbfc;
+}
+
+/* ============================================
+   TEXTFILL SCROLL REVEAL ANIMATION
+   ============================================ */
+.textfill-word {
+  display: inline-block;
+  opacity: 0.15;
+  transform: translateY(4px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.textfill-word-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   HANDWRITTEN TEXT EFFECT
+   ============================================ */
+.handwritten-container {
+  position: relative;
+  display: inline-block;
+}
+
+.handwritten-text {
+  font-family: 'Caveat', cursive;
+  font-size: 1.15em;
+  font-weight: 700;
+  color: #0d9488;
+  display: inline-flex;
+  position: relative;
+  vertical-align: baseline;
+  line-height: 0.8;
+  margin: 0 0.05em;
+}
+
+.handwritten-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(2px) scale(0.9);
+  transition: opacity 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  white-space: pre;
+}
+
+/* Trigger characters when active */
+.textfill-word-active .handwritten-char {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.handwritten-line {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 1.2s; /* Starts after the slower writing completes */
+}
+
+.textfill-word-active .handwritten-line {
+  stroke-dashoffset: 0;
+}
+
+/* ============================================
+   CHROMATIC TEXT EFFECT (RGB ABERRATION)
+   ============================================ */
+.chromatic-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.chromatic-cover,
+.chromatic-jiggle-layer {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  white-space: nowrap;
+}
+
+.chromatic-cover {
+  color: #fafbfc;
+  -webkit-text-fill-color: #fafbfc;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.chromatic-jiggle-layer {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  z-index: 1;
+  pointer-events: none;
+  transition: text-shadow 0.15s ease;
+}
+
+/* Animate the chromatic channel splits only on hover */
+.chromatic-container:hover .chromatic-jiggle-layer {
+  animation: chromatic-jiggle-anim 0.22s infinite linear;
+}
+
+@keyframes chromatic-jiggle-anim {
+  0% {
+    text-shadow: 
+      -1.5px -0.6px 0 rgba(239, 68, 68, 0.85),
+      1.5px 0.6px 0 rgba(6, 182, 212, 0.85);
+  }
+  15% {
+    text-shadow: 
+      1.5px 0.4px 0 rgba(239, 68, 68, 0.85),
+      -1.5px -0.4px 0 rgba(6, 182, 212, 0.85);
+  }
+  30% {
+    text-shadow: 
+      -2.2px 1px 0 rgba(239, 68, 68, 0.9),
+      2.2px -1px 0 rgba(6, 182, 212, 0.9);
+  }
+  45% {
+    text-shadow: 
+      -0.6px -0.6px 0 rgba(239, 68, 68, 0.2),
+      0.6px 0.6px 0 rgba(6, 182, 212, 0.2);
+  }
+  60% {
+    text-shadow: 
+      1.8px 0.8px 0 rgba(239, 68, 68, 0.85),
+      -1.8px -0.8px 0 rgba(6, 182, 212, 0.85);
+  }
+  75% {
+    text-shadow: 
+      -1.5px 1.2px 0 rgba(239, 68, 68, 0.85),
+      1.5px -1.2px 0 rgba(6, 182, 212, 0.85);
+  }
+  90% {
+    text-shadow: 
+      -2px -0.4px 0 rgba(239, 68, 68, 0.9),
+      2px 0.4px 0 rgba(6, 182, 212, 0.9);
+  }
+  100% {
+    text-shadow: 
+      -1.2px 1px 0 rgba(239, 68, 68, 0.85),
+      1.2px -1px 0 rgba(6, 182, 212, 0.85);
+  }
+}
+
+/* ============================================
+   WHEEL TIMELINE INTERACTION
+   ============================================ */
+:root {
+  --wheel-rotation: 40deg;
+}
+
+#how-it-works {
+  background-color: #fafbfc;
+  position: relative;
+}
+
+/* Drag-to-Rotate container dimensions */
+#wheel-timeline-drag-zone {
+  position: relative;
+}
+
+/* Radial wheel container positioning */
+#wheel-rotating-element {
+  transform: rotate(var(--wheel-rotation));
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); /* smooth snap animation */
+  cursor: grab;
+}
+
+.dragging #wheel-rotating-element {
+  transition: none !important; /* instantaneous tracking when dragging */
+  cursor: grabbing !important;
+}
+
+/* Individual node positioning */
+.wheel-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 64px;
+  height: 64px;
+  margin-top: -32px;
+  margin-left: -32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+  pointer-events: auto;
+}
+
+.wheel-node-inner {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(13, 148, 136, 0.12);
+  color: #475569;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(15, 46, 46, 0.03);
+  /* The counter-rotation transform handles keeping text upright */
+  transform: rotate(calc(-1 * (var(--wheel-rotation) + var(--node-angle))));
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: grab;
+}
+
+.dragging .wheel-node-inner {
+  transition: transform 0s !important; /* prevent tilt lag during cursor drag */
+  cursor: grabbing !important;
+}
+
+.wheel-node.active .wheel-node-inner {
+  background: #0d9488;
+  border-color: #0d9488;
+  color: #ffffff;
+  box-shadow: 0 0 25px rgba(13, 148, 136, 0.35);
+  transform: scale(1.15) rotate(calc(-1 * (var(--wheel-rotation) + var(--node-angle))));
+}
+
+/* Radial ticks styles */
+.wheel-tick {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 1.5px;
+  background: rgba(13, 148, 136, 0.18);
+  transform-origin: left center;
+  opacity: var(--tick-opacity, 0.15);
+  transform: translate(-50%, -50%) rotate(var(--tick-angle)) translate(415px) scaleX(var(--tick-scale, 1));
+  transition: opacity 0.15s ease, transform 0.1s ease-out, background-color 0.3s ease;
+}
+
+.wheel-tick.active-tick {
+  background: #0d9488;
+}
+
+/* Step cards stack on the right */
+.timeline-card {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(25px) scale(0.97);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.timeline-card.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  z-index: 10;
+}
+
+/* Scroll snap utilities */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#mobile-wheel-rotating-element {
+  transform: rotate(var(--mobile-wheel-rotation, 0deg));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-step-dot {
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-step-dot-inner {
+  transform: rotate(calc(-1 * (var(--mobile-wheel-rotation, 0deg) + var(--mobile-node-angle, 0deg))));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-step-dot.active {
+  background: #0d9488;
+  border-color: #0d9488;
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(13, 148, 136, 0.35);
+  transform: translate(-50%, -50%) rotate(var(--mobile-node-angle)) translate(200px) scale(1.15);
 }

@@ -809,127 +809,248 @@
         </div>
 
         <div
-          class="chipset-container relative w-full aspect-[16/9] md:aspect-[2/1] bg-white rounded-3xl border border-teal-600/10 overflow-hidden shadow-lg group mx-auto">
+          class="chipset-container relative w-full aspect-[16/9] md:aspect-[2/1] rounded-3xl overflow-hidden mx-auto"
+          style="background: linear-gradient(135deg, #f8fffd 0%, #f0fffe 30%, #e6fff9 60%, #f0fafe 100%); border: 1px solid rgba(13,148,136,0.12); box-shadow: 0 25px 60px rgba(13,148,136,0.06), 0 8px 20px rgba(13,148,136,0.04), inset 0 1px 0 rgba(255,255,255,0.8);">
 
-          <div class="absolute inset-0 opacity-20"
-            style="background-image: radial-gradient(#ccfbf1 1.5px, transparent 1.5px); background-size: 20px 20px;"></div>
+          <!-- Radial gradient overlay for depth -->
+          <div class="absolute inset-0 pointer-events-none"
+            style="background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(13,148,136,0.04) 0%, transparent 70%);"></div>
 
-          <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none" viewBox="0 0 1000 500">
+          <!-- Fine grid pattern -->
+          <div class="absolute inset-0 pointer-events-none"
+            style="background-image: linear-gradient(rgba(13,148,136,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(13,148,136,0.07) 1px, transparent 1px); background-size: 32px 32px; opacity: 0.6;"></div>
+
+          <!-- Top-left and bottom-right corner decorations -->
+          <div class="absolute top-0 left-0 w-20 h-20 pointer-events-none" style="background: linear-gradient(135deg, rgba(13,148,136,0.08) 0%, transparent 60%);"></div>
+          <div class="absolute bottom-0 right-0 w-20 h-20 pointer-events-none" style="background: linear-gradient(315deg, rgba(13,148,136,0.06) 0%, transparent 60%);"></div>
+
+          <!-- Central ambient glow -->
+          <div class="absolute pointer-events-none"
+            style="width:500px; height:500px; left:50%; top:50%; transform:translate(-50%,-50%); background:radial-gradient(circle, rgba(13,148,136,0.06) 0%, rgba(20,184,166,0.03) 40%, transparent 70%); border-radius:50%; filter:blur(20px);"></div>
+
+          <!-- SVG: Bezier paths + glow filter -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1000 500">
             <defs>
-              <linearGradient id="trace-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:rgba(13, 148, 136, 0)" />
-                <stop offset="50%" style="stop-color:#0d9488" />
-                <stop offset="100%" style="stop-color:rgba(13, 148, 136, 0)" />
+              <!-- Neon glow filter -->
+              <filter id="sci-fi-glow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="4" result="glow" />
+                <feMerge>
+                  <feMergeNode in="glow" />
+                  <feMergeNode in="glow" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              <!-- Gradient for tracks -->
+              <linearGradient id="track-grad-in-top" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#0d9488" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#0d9488" stop-opacity="0.06"/>
+              </linearGradient>
+              <linearGradient id="track-grad-in-bottom" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#0d9488" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#0d9488" stop-opacity="0.06"/>
+              </linearGradient>
+              <linearGradient id="track-grad-out-top" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#0d9488" stop-opacity="0.06"/>
+                <stop offset="100%" stop-color="#0d9488" stop-opacity="0.25"/>
+              </linearGradient>
+              <linearGradient id="track-grad-out-bottom" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#0d9488" stop-opacity="0.06"/>
+                <stop offset="100%" stop-color="#0d9488" stop-opacity="0.25"/>
               </linearGradient>
             </defs>
 
-            <path class="circuit-path stroke-electric-blue/50" d="M 100 100 L 200 100 L 250 150 L 400 150" fill="none"
-              stroke-width="2" stroke-linecap="round" />
-            <path class="circuit-path stroke-electric-blue/50" d="M 100 300 L 200 300 L 250 250 L 400 250" fill="none"
-              stroke-width="2" stroke-linecap="round" style="animation-delay: 0.5s" />
+            <!-- Background track paths with gradient stroke -->
+            <path class="bezier-track" stroke="url(#track-grad-in-top)" d="M 240 130 C 330 130, 320 250, 400 250" />
+            <path class="bezier-track" stroke="url(#track-grad-in-bottom)" d="M 240 370 C 330 370, 320 250, 400 250" />
+            <path class="bezier-track" stroke="url(#track-grad-out-top)" d="M 600 250 C 680 250, 670 130, 760 130" />
+            <path class="bezier-track" stroke="url(#track-grad-out-bottom)" d="M 600 250 C 680 250, 670 370, 760 370" />
 
-            <path class="circuit-path stroke-core-glow" d="M 600 150 L 750 150 L 800 100 L 900 100" fill="none"
-              stroke-width="2" stroke-linecap="round" style="animation-delay: 1s" />
-            <path class="circuit-path stroke-core-glow" d="M 600 250 L 750 250 L 800 300 L 900 300" fill="none"
-              stroke-width="2" stroke-linecap="round" style="animation-delay: 1.5s" />
+            <!-- Animated Glowing Beams -->
+            <path class="bezier-stream input-stream-top" d="M 240 130 C 330 130, 320 250, 400 250" />
+            <path class="bezier-stream input-stream-bottom" d="M 240 370 C 330 370, 320 250, 400 250" />
+            <path class="bezier-stream output-stream-top" d="M 600 250 C 680 250, 670 130, 760 130" />
+            <path class="bezier-stream output-stream-bottom" d="M 600 250 C 680 250, 670 370, 760 370" />
+
+            <!-- Node connection dots at card endpoints -->
+            <circle class="node-dot" cx="240" cy="130" r="4" />
+            <circle class="node-dot" cx="240" cy="370" r="4" />
+            <circle class="node-dot-output" cx="760" cy="130" r="4" />
+            <circle class="node-dot-output" cx="760" cy="370" r="4" />
+            <!-- Center connection dots -->
+            <circle cx="400" cy="250" r="3" fill="rgba(13,148,136,0.25)" />
+            <circle cx="600" cy="250" r="3" fill="rgba(13,148,136,0.25)" />
           </svg>
 
           <div class="relative z-10 w-full h-full grid grid-cols-12 grid-rows-6 pointer-events-none">
 
+            <!-- ====== Card 1: Web Scraping ====== -->
             <div class="col-start-2 col-span-2 row-start-2 row-span-1 flex items-center">
-              <div
-                class="w-full bg-chip border border-trace rounded p-3 relative group-hover:border-electric-blue/50 transition-colors">
-                <div class="flex items-center gap-2 mb-1">
-                  <span class="w-2 h-2 rounded-full bg-electric-blue animate-pulse"></span>
-                  <span class="text-[10px] font-mono text-slate-500 uppercase">Input_Stream</span>
-                </div>
-                <div class="text-sm font-bold text-[#0f2e2e]">Web Scraping</div>
-                <div class="absolute -right-1 top-1/2 -translate-y-1/2 w-1 h-8 bg-trace"></div>
-              </div>
-            </div>
-
-            <div class="col-start-2 col-span-2 row-start-5 row-span-1 flex items-center">
-              <div
-                class="w-full bg-chip border border-trace rounded p-3 relative group-hover:border-electric-blue/50 transition-colors">
-                <div class="flex items-center gap-2 mb-1">
-                  <span class="w-2 h-2 rounded-full bg-electric-blue animate-pulse"
-                    style="animation-delay: 0.5s"></span>
-                  <span class="text-[10px] font-mono text-slate-500 uppercase">Local_Mount</span>
-                </div>
-                <div class="text-sm font-bold text-[#0f2e2e]">CRM Data</div>
-                <div class="absolute -right-1 top-1/2 -translate-y-1/2 w-1 h-8 bg-trace"></div>
-              </div>
-            </div>
-
-            <div class="col-start-5 col-span-4 row-start-2 row-span-4 flex items-center justify-center">
-              <div class="relative w-48 h-48">
-                <div
-                  class="absolute inset-0 bg-teal-50 rounded-2xl border border-teal-600/15 shadow-md flex items-center justify-center">
-                  <div
-                    class="w-32 h-32 bg-white rounded-xl border border-teal-500/30 flex flex-col items-center justify-center core-pulse relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-br from-teal-600/10 to-teal-500/5"></div>
-
-                    <span class="material-symbols-rounded text-teal-600 text-5xl relative z-10">memory</span>
-                    <span
-                      class="text-xs font-mono text-teal-700 mt-2 font-bold tracking-widest relative z-10">VALYRA_CORE</span>
-
-                    <div class="absolute top-2 left-2 w-1 h-1 bg-teal-200 rounded-full"></div>
-                    <div class="absolute top-2 right-2 w-1 h-1 bg-teal-200 rounded-full"></div>
-                    <div class="absolute bottom-2 left-2 w-1 h-1 bg-teal-200 rounded-full"></div>
-                    <div class="absolute bottom-2 right-2 w-1 h-1 bg-teal-200 rounded-full"></div>
+              <div class="w-full relative transition-all duration-500 input-node-1 rounded-2xl overflow-hidden"
+                style="background: rgba(255,255,255,0.85); border: 1px solid rgba(13,148,136,0.12); box-shadow: 0 4px 24px rgba(13,148,136,0.07), 0 1px 4px rgba(0,0,0,0.04); backdrop-filter: blur(12px);">
+                <!-- Top teal gradient stripe -->
+                <div class="h-0.5 w-full" style="background: linear-gradient(90deg, #0d9488 0%, #2dd4bf 60%, transparent 100%);"></div>
+                <div class="p-3.5">
+                  <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center gap-1.5">
+                      <div class="relative">
+                        <span class="w-2 h-2 rounded-full block input-status-dot-1"></span>
+                        <span class="w-2 h-2 rounded-full block absolute inset-0 input-status-dot-1-ring" style="animation: ping 2s cubic-bezier(0,0,0.2,1) infinite; opacity:0;"></span>
+                      </div>
+                      <span class="text-[9px] font-mono text-teal-600 tracking-widest uppercase font-medium">INPUT_STREAM</span>
+                    </div>
+                    <span class="text-[8px] font-mono text-teal-300 bg-teal-50 px-1.5 py-0.5 rounded">SYS_01</span>
+                  </div>
+                  <div class="text-[13px] font-bold font-sans text-[#0f2e2e] mb-2 tracking-tight">Web Scraping</div>
+                  <!-- Mini Terminal Feed -->
+                  <div class="font-mono text-[9px] leading-relaxed text-teal-700/80 rounded-lg border border-teal-100 h-9 overflow-hidden px-2 py-1.5"
+                    style="background: linear-gradient(135deg, rgba(240,253,250,0.8) 0%, rgba(204,251,241,0.3) 100%);">
+                    <div class="terminal-line-1 opacity-0 flex items-center gap-1"><span class="text-teal-400">›</span> parsing html...</div>
+                    <div class="terminal-line-2 opacity-0 flex items-center gap-1"><span class="text-emerald-500">✓</span> 42 leads found</div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 flex gap-1">
-                  <div class="w-1 h-4 bg-teal-200"></div>
-                  <div class="w-1 h-4 bg-teal-200"></div>
-                  <div class="w-1 h-4 bg-teal-200"></div>
-                </div>
-                <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 flex gap-1">
-                  <div class="w-1 h-4 bg-teal-200"></div>
-                  <div class="w-1 h-4 bg-teal-200"></div>
-                  <div class="w-1 h-4 bg-teal-200"></div>
+            <!-- ====== Card 2: CRM Data ====== -->
+            <div class="col-start-2 col-span-2 row-start-5 row-span-1 flex items-center">
+              <div class="w-full relative transition-all duration-500 input-node-2 rounded-2xl overflow-hidden"
+                style="background: rgba(255,255,255,0.85); border: 1px solid rgba(13,148,136,0.12); box-shadow: 0 4px 24px rgba(13,148,136,0.07), 0 1px 4px rgba(0,0,0,0.04); backdrop-filter: blur(12px);">
+                <div class="h-0.5 w-full" style="background: linear-gradient(90deg, #0d9488 0%, #2dd4bf 60%, transparent 100%);"></div>
+                <div class="p-3.5">
+                  <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center gap-1.5">
+                      <span class="w-2 h-2 rounded-full input-status-dot-2"></span>
+                      <span class="text-[9px] font-mono text-teal-600 tracking-widest uppercase font-medium">LOCAL_MOUNT</span>
+                    </div>
+                    <span class="text-[8px] font-mono text-teal-300 bg-teal-50 px-1.5 py-0.5 rounded">SYS_02</span>
+                  </div>
+                  <div class="text-[13px] font-bold font-sans text-[#0f2e2e] mb-2 tracking-tight">CRM Data</div>
+                  <div class="font-mono text-[9px] leading-relaxed text-teal-700/80 rounded-lg border border-teal-100 h-9 overflow-hidden px-2 py-1.5"
+                    style="background: linear-gradient(135deg, rgba(240,253,250,0.8) 0%, rgba(204,251,241,0.3) 100%);">
+                    <div class="terminal-line-1 opacity-0 flex items-center gap-1"><span class="text-teal-400">›</span> sqlite query...</div>
+                    <div class="terminal-line-2 opacity-0 flex items-center gap-1"><span class="text-emerald-500">✓</span> 18 leads loaded</div>
+                  </div>
                 </div>
               </div>
             </div>
 
+            <!-- ====== Central Reactor Core ====== -->
+            <div class="col-start-5 col-span-4 row-start-1 row-span-6 flex items-center justify-center">
+              <div class="relative flex items-center justify-center" style="width:240px; height:240px;">
+
+                <!-- Outermost ambient ring glow -->
+                <div class="absolute rounded-full pointer-events-none"
+                  style="width:230px; height:230px; background: radial-gradient(circle, rgba(13,148,136,0.04) 40%, transparent 70%); animation: reactor-ambient 4s ease-in-out infinite;"></div>
+
+                <!-- Outer Spinner Ring: large dashed gear -->
+                <svg class="absolute" style="width:230px; height:230px; animation: spin 14s linear infinite;" viewBox="0 0 230 230">
+                  <circle cx="115" cy="115" r="108" fill="none" stroke="rgba(13,148,136,0.08)" stroke-width="1.5"/>
+                  <circle cx="115" cy="115" r="108" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="18 10 6 18 40 8" stroke-linecap="round" opacity="0.6"/>
+                </svg>
+
+                <!-- Middle Counter-Spinner: tighter gear -->
+                <svg class="absolute" style="width:190px; height:190px; animation: spin 9s linear infinite reverse;" viewBox="0 0 190 190">
+                  <circle cx="95" cy="95" r="88" fill="none" stroke="rgba(13,148,136,0.06)" stroke-width="1"/>
+                  <circle cx="95" cy="95" r="88" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-dasharray="8 24 28 10 5 14" stroke-linecap="round" opacity="0.8"/>
+                </svg>
+
+                <!-- Inner Spinner Ring: fine detail ring -->
+                <svg class="absolute" style="width:150px; height:150px; animation: spin 6s linear infinite;" viewBox="0 0 150 150">
+                  <circle cx="75" cy="75" r="68" fill="none" stroke="rgba(13,148,136,0.1)" stroke-width="1"/>
+                  <circle cx="75" cy="75" r="68" fill="none" stroke="#2dd4bf" stroke-width="1.5" stroke-dasharray="5 15 25 5 10" stroke-linecap="round" opacity="0.7"/>
+                </svg>
+
+                <!-- Core Orb -->
+                <div class="relative flex flex-col items-center justify-center rounded-full z-10 reactor-orb"
+                  style="width:120px; height:120px; background: linear-gradient(145deg, #ffffff 0%, #f0fffe 50%, #e6fffd 100%); border: 1.5px solid rgba(13,148,136,0.2); box-shadow: 0 0 40px rgba(13,148,136,0.1), 0 0 80px rgba(13,148,136,0.05), inset 0 1px 0 rgba(255,255,255,1);">
+
+                  <!-- Pulsing inner energy ring -->
+                  <div class="absolute rounded-full reactor-pulse"
+                    style="width:90px; height:90px; border: 1px solid rgba(13,148,136,0.2); background: radial-gradient(circle, rgba(13,148,136,0.04) 0%, transparent 70%);"></div>
+
+                  <!-- Icon -->
+                  <span class="material-symbols-rounded relative z-10" style="font-size: 40px; color: #0d9488; filter: drop-shadow(0 0 8px rgba(13,148,136,0.3));">memory</span>
+                  <span class="font-mono font-bold relative z-10 reactor-title" style="font-size: 8px; letter-spacing: 0.2em; color: #0f766e; margin-top: 6px;">VALYRA_CORE</span>
+
+                  <!-- Corner micro-dots -->
+                  <div class="absolute top-3 left-3 w-1 h-1 rounded-full bg-teal-300"></div>
+                  <div class="absolute top-3 right-3 w-1 h-1 rounded-full bg-teal-300"></div>
+                  <div class="absolute bottom-3 left-3 w-1 h-1 rounded-full bg-teal-300"></div>
+                  <div class="absolute bottom-3 right-3 w-1 h-1 rounded-full bg-teal-300"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ====== Card 3: Draft Email ====== -->
             <div class="col-start-10 col-span-2 row-start-2 row-span-1 flex items-center">
-              <div
-                class="w-full bg-chip border border-trace rounded p-3 relative group-hover:border-teal-500/50 transition-colors">
-                <div class="absolute -left-1 top-1/2 -translate-y-1/2 w-1 h-8 bg-trace"></div>
-                <div class="flex items-center gap-2 mb-1">
-                  <span class="text-[10px] font-mono text-teal-700 uppercase">Action_01</span>
-                </div>
-                <div class="text-sm font-bold text-[#0f2e2e]">Draft Email</div>
-                <div class="w-full bg-teal-100 h-1 mt-2 rounded-full overflow-hidden">
-                  <div class="h-full bg-teal-600 w-[80%]"></div>
+              <div class="w-full relative transition-all duration-500 output-node-1 rounded-2xl overflow-hidden"
+                style="background: rgba(255,255,255,0.85); border: 1px solid rgba(13,148,136,0.12); box-shadow: 0 4px 24px rgba(13,148,136,0.07), 0 1px 4px rgba(0,0,0,0.04); backdrop-filter: blur(12px);">
+                <div class="h-0.5 w-full" style="background: linear-gradient(90deg, transparent 0%, #2dd4bf 40%, #0d9488 100%);"></div>
+                <div class="p-3.5">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-[9px] font-mono text-teal-600 tracking-widest uppercase font-medium">ACTION_01</span>
+                    <span class="text-[8px] font-mono text-teal-300 bg-teal-50 px-1.5 py-0.5 rounded">SYS_03</span>
+                  </div>
+                  <div class="text-[13px] font-bold font-sans text-[#0f2e2e] mb-2 tracking-tight">Draft Email</div>
+                  <!-- Premium animated progress bar -->
+                  <div class="w-full rounded-full overflow-hidden mb-2" style="height: 5px; background: rgba(13,148,136,0.08); border: 1px solid rgba(13,148,136,0.1);">
+                    <div class="h-full rounded-full draft-bar-progress" style="background: linear-gradient(90deg, #0d9488 0%, #2dd4bf 70%, #5eead4 100%); box-shadow: 0 0 8px rgba(45,212,191,0.5);"></div>
+                  </div>
+                  <div class="font-mono text-[9px] leading-relaxed text-teal-700/80 rounded-lg border border-teal-100 h-9 overflow-hidden px-2 py-1.5"
+                    style="background: linear-gradient(135deg, rgba(240,253,250,0.8) 0%, rgba(204,251,241,0.3) 100%);">
+                    <div class="terminal-line-3 opacity-0 flex items-center gap-1"><span class="text-teal-400">›</span> drafting mail...</div>
+                    <div class="terminal-line-4 opacity-0 flex items-center gap-1"><span class="text-emerald-500">✓</span> queued to crm</div>
+                  </div>
                 </div>
               </div>
             </div>
 
+            <!-- ====== Card 4: Update Lead ====== -->
             <div class="col-start-10 col-span-2 row-start-5 row-span-1 flex items-center">
-              <div
-                class="w-full bg-chip border border-trace rounded p-3 relative group-hover:border-teal-500/50 transition-colors">
-                <div class="absolute -left-1 top-1/2 -translate-y-1/2 w-1 h-8 bg-trace"></div>
-                <div class="flex items-center gap-2 mb-1">
-                  <span class="text-[10px] font-mono text-teal-700 uppercase">Action_02</span>
-                </div>
-                <div class="text-sm font-bold text-[#0f2e2e]">Update Lead</div>
-                <div class="flex gap-1 mt-2">
-                  <span class="w-1.5 h-1.5 bg-teal-600 rounded-full"></span>
-                  <span class="w-1.5 h-1.5 bg-teal-600 rounded-full"></span>
-                  <span class="w-1.5 h-1.5 bg-teal-200 rounded-full"></span>
+              <div class="w-full relative transition-all duration-500 output-node-2 rounded-2xl overflow-hidden"
+                style="background: rgba(255,255,255,0.85); border: 1px solid rgba(13,148,136,0.12); box-shadow: 0 4px 24px rgba(13,148,136,0.07), 0 1px 4px rgba(0,0,0,0.04); backdrop-filter: blur(12px);">
+                <div class="h-0.5 w-full" style="background: linear-gradient(90deg, transparent 0%, #2dd4bf 40%, #0d9488 100%);"></div>
+                <div class="p-3.5">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-[9px] font-mono text-teal-600 tracking-widest uppercase font-medium">ACTION_02</span>
+                    <span class="text-[8px] font-mono text-teal-300 bg-teal-50 px-1.5 py-0.5 rounded">SYS_04</span>
+                  </div>
+                  <div class="text-[13px] font-bold font-sans text-[#0f2e2e] mb-2 tracking-tight">Update Lead</div>
+                  <!-- Premium step dots -->
+                  <div class="flex items-center gap-1.5 mb-2">
+                    <span class="w-2 h-2 rounded-full lead-step-dot-1" style="border: 1px solid rgba(13,148,136,0.15);"></span>
+                    <div class="flex-1 h-px" style="background: rgba(13,148,136,0.1);"></div>
+                    <span class="w-2 h-2 rounded-full lead-step-dot-2" style="border: 1px solid rgba(13,148,136,0.15);"></span>
+                    <div class="flex-1 h-px" style="background: rgba(13,148,136,0.1);"></div>
+                    <span class="w-2 h-2 rounded-full lead-step-dot-3" style="border: 1px solid rgba(13,148,136,0.15);"></span>
+                  </div>
+                  <div class="font-mono text-[9px] leading-relaxed text-teal-700/80 rounded-lg border border-teal-100 h-9 overflow-hidden px-2 py-1.5"
+                    style="background: linear-gradient(135deg, rgba(240,253,250,0.8) 0%, rgba(204,251,241,0.3) 100%);">
+                    <div class="terminal-line-5 opacity-0 flex items-center gap-1"><span class="text-teal-400">›</span> sql lead query</div>
+                    <div class="terminal-line-6 opacity-0 flex items-center gap-1"><span class="text-emerald-500">✓</span> updated ok</div>
+                  </div>
                 </div>
               </div>
             </div>
 
           </div>
 
-          <div class="absolute bottom-4 right-6 text-[10px] font-mono text-slate-500 tracking-widest">
-            SYSTEM_STATUS: <span class="text-teal-600 font-bold">OPERATIONAL</span> // TEMP: 38°C
+          <!-- Bottom status bar -->
+          <div class="absolute bottom-0 left-0 right-0 px-6 py-2.5 flex items-center justify-between pointer-events-none"
+            style="background: linear-gradient(90deg, rgba(240,253,250,0.9) 0%, rgba(255,255,255,0.5) 50%, rgba(240,253,250,0.9) 100%); border-top: 1px solid rgba(13,148,136,0.06);">
+            <div class="flex items-center gap-5 text-[9px] font-mono text-teal-600/60">
+              <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse inline-block"></span> CORE: <span class="text-teal-600 font-bold">ACTIVE</span></span>
+              <span>TEMP: 34.5°C</span>
+              <span>MEM: 12.8 GB</span>
+              <span>UPTIME: 99.9%</span>
+            </div>
+            <div class="text-[9px] font-mono text-teal-600/60 tracking-wider flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse inline-block"></span>
+              SYSTEM_STATUS: <span class="text-teal-600 font-bold">OPERATIONAL</span>
+            </div>
           </div>
         </div>
+
       </div>
 
 

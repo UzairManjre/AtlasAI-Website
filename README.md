@@ -1,4 +1,4 @@
-# AtlasAI - Valyra Local Hunter Landing Page
+# LocalHunter - Valyra Local Hunter Landing Page
 
 A premium, interactive single-page landing website for **Valyra Local Hunter**—an autonomous AI-driven outbound pipeline system.
 
